@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Frogger"
+run/main_scene="uid://1vm17o6m07np"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
