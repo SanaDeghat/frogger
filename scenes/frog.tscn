@@ -57,7 +57,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 10.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump-back",
-"speed": 10.0
+"speed": 14.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mqod6"]
@@ -95,7 +95,7 @@ script = ExtResource("1_qyo2l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193036686]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u8gyo")
-animation = &"jump-back"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342170395]
 position = Vector2(0, 3)

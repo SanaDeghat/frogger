@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://1vm17o6m07np"]
 
-[ext_resource type="Texture2D" uid="uid://dfkue8ehrp0on" path="res://assets/sprites/pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://vttaqrn6js0f" path="res://scenes/frog.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://cid2jis0xcb0x" path="res://scenes/camera_2d.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bxdpjx14dwj8l" path="res://scenes/camera.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://d2d5xstvs7b18" path="res://scenes/rows/row_spawner.tscn" id="2_sugp2"]
 
 [node name="Node2D" type="Node2D" unique_id=2019117850]
 
-[node name="PngtreeABackgroundOfOrangeBlueAndYellowGradientsWithGrittyAppearanceImage16233934" type="Sprite2D" parent="." unique_id=1179153141]
-position = Vector2(593, -571)
-scale = Vector2(2.8759613, 9.394231)
-texture = ExtResource("1_0wfyh")
+[node name="row-spawner" parent="." unique_id=770669474 instance=ExtResource("2_sugp2")]
+scale = Vector2(0.9999999, 0.9999999)
+camera = ExtResource("2_jyhfs")
 
 [node name="CharacterBody2D" parent="." unique_id=2132057065 instance=ExtResource("1_o5qli")]
-position = Vector2(597, 298)
+position = Vector2(579, 23)
 scale = Vector2(5, 5)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=659195910]
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=1213099867]
+scale = Vector2(0.19999999, 0.19999999)
+enabled = false
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=595033041]
-script = ExtResource("3_sugp2")
+[node name="Camera2D" parent="." unique_id=546184211 instance=ExtResource("2_jyhfs")]
+position = Vector2(578, 21)

@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#position.y=character_body_2d.position.y
 	position.y-=0.25
-	print(character_body_2d.position.y)
-	print(position.y)
+	print(global_position.y)
+
 	if character_body_2d.position.y<position.y-100:
 			position.y=character_body_2d.position.y+100

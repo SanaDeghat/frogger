@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d2d5xstvs7b18"]
+
+[ext_resource type="Script" uid="uid://dpwc5ts6sholy" path="res://scripts/row_spawner.gd" id="1_2xxh8"]
+[ext_resource type="PackedScene" uid="uid://1uptk0dcywmx" path="res://scenes/rows/grass_row.tscn" id="2_hrq1v"]
+[ext_resource type="PackedScene" uid="uid://bsgu6y4b6vnak" path="res://scenes/rows/stone_row.tscn" id="3_7nm2n"]
+[ext_resource type="PackedScene" uid="uid://bipfhr1jawrbe" path="res://scenes/rows/river-row.tscn" id="4_0bje0"]
+[ext_resource type="PackedScene" uid="uid://1xhlgl8mbiq5" path="res://scenes/rows/flower_row.tscn" id="5_w4why"]
+
+[node name="row-spawner" type="Node2D" unique_id=770669474]
+script = ExtResource("1_2xxh8")
+grass = ExtResource("2_hrq1v")
+rock = ExtResource("3_7nm2n")
+river = ExtResource("4_0bje0")
+flowers = ExtResource("5_w4why")

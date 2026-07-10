@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const TILE_SIZE = 100
+const TILE_SIZE = 80
+
 const SPEED = 200.0
 
 var target_position: Vector2
@@ -25,7 +26,7 @@ func _physics_process(delta):
 			direction = Vector2.UP
 		elif Input.is_action_just_pressed("ui_down"):
 			direction = Vector2.DOWN
-			sprites.play("jump-back")
+			sprites.play("jump")
 		if direction != Vector2.ZERO:
 			 
 			sprites.flip_h=(direction!=Vector2(1,0))
