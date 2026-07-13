@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7fqvm0jok3cl"
-path="res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"
+uid="uid://bagt4rm1ks2lu"
+path="res://.godot/imported/winter sprites.png-b8a801c6adab4f5f7f780f2c7f9f54b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Frog-Sheet.png"
-dest_files=["res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"]
+source_file="res://assets/sprites/Sprout winter/winter sprites.png"
+dest_files=["res://.godot/imported/winter sprites.png-b8a801c6adab4f5f7f780f2c7f9f54b0.ctex"]
 
 [params]
 

@@ -1,8 +1,44 @@
 [gd_scene format=4 uid="uid://bipfhr1jawrbe"]
 
 [ext_resource type="PackedScene" uid="uid://ns45ohpev2s6" path="res://scenes/tile_map_layer.tscn" id="1_0jnw0"]
+[ext_resource type="Texture2D" uid="uid://c32ksqflr3dv4" path="res://assets/sprites/mediuml fish.png" id="2_x3w2q"]
+[ext_resource type="PackedScene" uid="uid://7a43kg2ldtft" path="res://scenes/tile_map_layer_addons.tscn" id="3_ci3je"]
+[ext_resource type="PackedScene" uid="uid://31uqahp5m5bx" path="res://scenes/floatyThingie.tscn" id="4_orxyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orxyo"]
+atlas = ExtResource("2_x3w2q")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxsqq"]
+atlas = ExtResource("2_x3w2q")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3b6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orxyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxsqq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="grass-row" type="Node2D" unique_id=2073363717]
 
 [node name="TileMapLayer" parent="." unique_id=1264887566 instance=ExtResource("1_0jnw0")]
-tile_map_data = PackedByteArray("AAAAAAAAAgAbABcAAAABAAAAAAABAAEAAAACAAAAAAAIAAUAAAADAAAAAAADAAEAAAAEAAAAAAALAAEAAAAFAAAAAAAFAAEAAAAGAAAAAgAbABcAAAAHAAAAAAAHAAEAAAAIAAAAAAAIAAUAAAAJAAAAAAAJAAEAAAAKAAAAAAAKAAEAAAALAAAAAAALAAEAAAAMAAAAAgAbABcAAAANAAAAAAANAAEAAAAOAAAAAAAOAAEAAAAPAAAAAAAPAAEAAAAQAAAAAgAbABcAAAA=")
+tile_map_data = PackedByteArray("AAABAAAABgAAAAAAAAACAAAABgAAAAAAAAADAAAABgAAAAAAAAAEAAAABgAAAAAAAAAFAAAABgAAAAAAAAAGAAAABgAAAAAAAAAHAAAABgAAAAAAAAAIAAAABgAAAAAAAAAJAAAABgAAAAAAAAAKAAAABgAAAAAAAAALAAAABgAAAAAAAAAMAAAABgAAAAAAAAANAAAABgAAAAAAAAAOAAAABgAAAAAAAAAPAAAABgAAAAAAAAAQAAAABgAAAAAAAAAAAAAABgAAAAAAAAA=")
+
+[node name="fish" type="AnimatedSprite2D" parent="." unique_id=1405725134]
+position = Vector2(329, 42)
+scale = Vector2(3.6875, 3.375)
+sprite_frames = SubResource("SpriteFrames_o3b6i")
+autoplay = "default"
+
+[node name="TileMapLayer2" parent="." unique_id=1234454671 instance=ExtResource("3_ci3je")]
+
+[node name="StaticBody2D" parent="." unique_id=279467197 instance=ExtResource("4_orxyo")]
+position = Vector2(1357, 38.000004)

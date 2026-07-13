@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://vttaqrn6js0f"]
 
-[ext_resource type="Texture2D" uid="uid://dicqu84s53ahu" path="res://assets/sprites/Frog-Sheet.png" id="1_mqod6"]
+[ext_resource type="Texture2D" uid="uid://7fqvm0jok3cl" path="res://assets/sprites/Frog-Sheet.png" id="1_mqod6"]
 [ext_resource type="Script" uid="uid://ci451a6crxm1u" path="res://scripts/frog.gd" id="1_qyo2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g2vb"]
+size = Vector2(12, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyo2l"]
 atlas = ExtResource("1_mqod6")
@@ -86,17 +89,57 @@ animations = [{
 "speed": 14.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mqod6"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq8tc"]
+size = Vector2(10, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyo2l"]
+size = Vector2(10, 5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2132057065]
+collision_layer = 16
+collision_mask = 16
+platform_wall_layers = 16
+safe_margin = 6.467
 script = ExtResource("1_qyo2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2095479091]
+physics_interpolation_mode = 1
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_1g2vb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193036686]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u8gyo")
 animation = &"jump"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342170395]
-position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_mqod6")
+[node name="hitbox" type="Area2D" parent="." unique_id=1977374794]
+collision_layer = 8
+collision_mask = 8
+priority = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=850785525]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_rq8tc")
+
+[node name="floaty_collisions" type="Area2D" parent="." unique_id=905869293]
+collision_layer = 2
+collision_mask = 2
+priority = 6
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floaty_collisions" unique_id=562789582]
+light_mask = 10
+visibility_layer = 26
+position = Vector2(-1, 4.5)
+shape = SubResource("RectangleShape2D_qyo2l")
+
+[node name="collisionbox" type="Area2D" parent="." unique_id=1834566158]
+collision_layer = 16
+collision_mask = 16
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_shape_entered" from="hitbox" to="." method="_on_hitbox_body_shape_entered"]
+[connection signal="area_shape_entered" from="floaty_collisions" to="." method="_on_river_collisions_area_shape_entered"]
+[connection signal="area_shape_exited" from="floaty_collisions" to="." method="_on_river_collisions_area_shape_exited"]
+[connection signal="body_shape_entered" from="collisionbox" to="." method="_on_collisionbox_body_shape_entered"]

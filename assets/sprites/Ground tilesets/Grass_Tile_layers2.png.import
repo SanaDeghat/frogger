@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7fqvm0jok3cl"
-path="res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"
+uid="uid://bvvk7x4syxljl"
+path="res://.godot/imported/Grass_Tile_layers2.png-48a82e5d2e8ce6cf2f8d1e60a5a2d556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Frog-Sheet.png"
-dest_files=["res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"]
+source_file="res://assets/sprites/Ground tilesets/Grass_Tile_layers2.png"
+dest_files=["res://.godot/imported/Grass_Tile_layers2.png-48a82e5d2e8ce6cf2f8d1e60a5a2d556.ctex"]
 
 [params]
 

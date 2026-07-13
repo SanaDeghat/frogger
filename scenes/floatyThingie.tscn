@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://31uqahp5m5bx"]
+
+[ext_resource type="Texture2D" uid="uid://bk42i5b1d4kfl" path="res://assets/sprites/Basic Grass Biom things 1.png" id="1_43f1u"]
+[ext_resource type="Script" uid="uid://b88u3ndyfx8yv" path="res://scripts/floaty_thingie.gd" id="1_gowut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gowut"]
+atlas = ExtResource("1_43f1u")
+region = Rect2(128, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w45o0"]
+atlas = ExtResource("1_43f1u")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf8bu"]
+atlas = ExtResource("1_43f1u")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iuvt"]
+atlas = ExtResource("1_43f1u")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6pmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gowut")
+}],
+"loop": true,
+"name": &"1_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w45o0")
+}],
+"loop": true,
+"name": &"1_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf8bu")
+}],
+"loop": true,
+"name": &"1_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iuvt")
+}],
+"loop": true,
+"name": &"1_4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gowut"]
+size = Vector2(12.000002, 5.2500005)
+
+[node name="floatythingie" type="Node2D" unique_id=2126560591]
+scale = Vector2(5, 5)
+script = ExtResource("1_gowut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837155464]
+sprite_frames = SubResource("SpriteFrames_s6pmc")
+animation = &"1_3"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1729671466]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=145771007]
+position = Vector2(0.19999991, 1.1750001)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_gowut")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

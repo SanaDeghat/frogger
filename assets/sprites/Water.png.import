@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7fqvm0jok3cl"
-path="res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"
+uid="uid://f75gmt4vyttf"
+path="res://.godot/imported/Water.png-2b16eecf9d7da31117faca1a08563b4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Frog-Sheet.png"
-dest_files=["res://.godot/imported/Frog-Sheet.png-42947bdfc76708be2756695ff50c4de2.ctex"]
+source_file="res://assets/sprites/Water.png"
+dest_files=["res://.godot/imported/Water.png-2b16eecf9d7da31117faca1a08563b4d.ctex"]
 
 [params]
 
