@@ -64,7 +64,7 @@ texture = ExtResource("1_piscq")
 8:2/0 = 0
 8:2/0/texture_origin = Vector2i(0, 8)
 8:2/0/z_index = 1
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.0963063, -7.3089423, 7.39233, -7.2828827, 7.047224, 7.074923, -7.2839274, 7.427772)
 
 [sub_resource type="TileSet" id="TileSet_2xk2e"]
 physics_layer_0/collision_layer = 16

@@ -51,18 +51,33 @@ func _physics_process(delta):
 	if direction == Vector2.ZERO:
 		return
 
-	sprites.play("jump")
 
 	if direction.x != 0:
 		sprites.flip_h = direction.x < 0
 
-	# Always start exactly on a tile
+	
 	global_position = snap_to_grid(global_position)
 
-	target_position = global_position + direction * TILE_SIZE
+	var next_position = global_position + direction * TILE_SIZE
 
-	moving = true
+	if can_move_to(next_position):
+		sprites.play("jump")
+		target_position = next_position
+		moving = true
+func can_move_to(pos: Vector2) -> bool:
+	var space_state = get_world_2d().direct_space_state
 
+	var shape = CircleShape2D.new()
+	shape.radius = 20 
+
+	var query = PhysicsShapeQueryParameters2D.new()
+	query.shape = shape
+	query.transform = Transform2D(0, pos)
+	query.collision_mask = 1 << 4
+
+	var result = space_state.intersect_shape(query)
+
+	return result.is_empty()
 
 func snap_to_grid(pos: Vector2) -> Vector2:
 	return Vector2(
@@ -96,13 +111,6 @@ func _on_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index
 
 
 
-
-func _on_collisionbox_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	print("rwar")
-
-
-func _on_collisionbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("rwarrrrr")
 
 
 func _on_collisionbox_body_entered(body: Node2D) -> void:
