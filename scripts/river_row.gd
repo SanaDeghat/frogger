@@ -19,6 +19,7 @@ func _ready():
 	spawn_initial_floaties()
 
 	set_spawn_time()
+	spawn_timer.start()
 
 
 func spawn_initial_floaties():

@@ -15,7 +15,7 @@ var next_spawn_y: float = -400.0
 var scenes: Array = []
 
 func _ready() -> void:
-	scenes = [ river, flowers,grass, rock]
+	scenes = [ flowers,grass,rock,river]
 	
 
 func _process(delta: float) -> void:

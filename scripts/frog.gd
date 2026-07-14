@@ -1,7 +1,7 @@
 extends CharacterBody2D
-
+var score=0
 const TILE_SIZE = 80
-const SPEED = 350.0
+const SPEED = 300.0
 const GRID_OFFSET = Vector2(40, 20)
 
 var target_position: Vector2
