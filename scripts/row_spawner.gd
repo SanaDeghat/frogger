@@ -7,17 +7,15 @@ extends Node2D
 
 @onready var camera: Camera2D = $"../Camera2D"
 
-# Configuration variables
 var row_spacing: float = 80.0
-var spawn_buffer: float = 600.0   # How far ahead of the camera to generate rows
-var destroy_buffer: float = 400.0 # How far behind the camera to delete rows
+var spawn_buffer: float = 600.0   
+var destroy_buffer: float = 400.0 
 
-# Tracks the exact Y position of the next row to create
 var next_spawn_y: float = -400.0
 var scenes: Array = []
 
 func _ready() -> void:
-	scenes = [grass, rock, river, flowers]
+	scenes = [ river, flowers,grass, rock]
 	
 
 func _process(delta: float) -> void:
@@ -30,9 +28,9 @@ func _process(delta: float) -> void:
 			chi.queue_free()
 
 func spawn_row() -> void:
-	var obstacle = scenes.pick_random().instantiate()
-	obstacle.add_to_group("obstacles")
-	obstacle.position.y = next_spawn_y
-	add_child(obstacle)
+	var row = scenes.pick_random().instantiate()
+	row.add_to_group("rows")
+	row.position.y = next_spawn_y
+	add_child(row)
 	
 	next_spawn_y -= row_spacing

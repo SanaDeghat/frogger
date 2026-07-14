@@ -23,7 +23,7 @@ scale = Vector2(5, 5)
 [node name="Camera2D" parent="." unique_id=546184211 instance=ExtResource("4_jyhfs")]
 position = Vector2(578, 21)
 scale = Vector2(0.86, 0.86)
-zoom = Vector2(0.58, 0.58)
+zoom = Vector2(0.42, 0.42)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=893126270]
 collision_layer = 16
