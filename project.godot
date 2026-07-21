@@ -15,6 +15,10 @@ run/main_scene="uid://1vm17o6m07np"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*uid://br71up3f2ao68"
+
 [debug]
 
 shapes/collision/shape_color=Color(2.9841065e-06, 0.6336632, 0.4414849, 0.41960785)

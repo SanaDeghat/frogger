@@ -20,7 +20,6 @@ func draw_terrain():
 	)
 	
 	if tile_map_layer_addons:
-		print("yippe")
 		tile_map_layer_addons.set_cells_terrain_connect(
 			cells,
 			0, 

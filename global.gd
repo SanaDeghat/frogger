@@ -1,7 +1,8 @@
 extends Node
 var gold=0
 var highscore=0
-
+var skinStatus= [true,false,false]
+var currentSkin := 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

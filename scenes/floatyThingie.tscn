@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bk42i5b1d4kfl" path="res://assets/sprites/Basic Grass Biom things 1.png" id="1_43f1u"]
 [ext_resource type="Script" uid="uid://b88u3ndyfx8yv" path="res://scripts/floaty_thingie.gd" id="1_gowut"]
+[ext_resource type="PackedScene" uid="uid://1ha503y0ooiy" path="res://scenes/coin.tscn" id="3_w45o0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gowut"]
 atlas = ExtResource("1_43f1u")
@@ -75,5 +76,8 @@ collision_mask = 2
 position = Vector2(0.19999991, 1.1750001)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_gowut")
+
+[node name="coin" parent="." unique_id=560083590 instance=ExtResource("3_w45o0")]
+position = Vector2(-2.6, -5.7999997)
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
