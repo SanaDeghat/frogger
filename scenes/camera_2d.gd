@@ -10,6 +10,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#position.y=character_body_2d.position.y
-	position.y-=0.25
+	position.y-=0.5
 	if character_body_2d.position.y<position.y-100:
 			position.y=character_body_2d.position.y+100
