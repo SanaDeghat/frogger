@@ -26,7 +26,9 @@ Things i dont have yet (BUT I WILL ADD TRUST):
 10. loading screen/title page
 11. FISHY FISHY in water
 12. pretty itch.io page
+
 lemme know if u got other suggestions
+
 ALSO did not commit once per hour bc i spent way too long debbung, **for some more detailed journals [click here](https://macondo.hackclub.com/projects/12320)**
 
 # What was it made with?
