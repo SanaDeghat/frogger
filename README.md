@@ -12,6 +12,7 @@ heres some features that it has already:
 7. grid based movment
 8. coin system
 9. diffrent frog skins
+
 Things i dont have yet (BUT I WILL ADD TRUST):
 1. roads 💀
 2. Death/game over (and the death screen and all that)
