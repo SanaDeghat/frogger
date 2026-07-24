@@ -3,18 +3,18 @@ extends Node2D
 @onready var spawn_timer: Timer = $SpawnTimer
 
 @export var floaty: PackedScene
-@export var river_width := 1280
+@export var min_gap := 180.0
+@export var max_gap := 900.0
 
+var river_width: float
 var direction := 1
-var speed := 1.0
-
-@export var min_gap := 180
-@export var max_gap := 900
+var speed := 1.25
 
 
 func _ready():
+	river_width = get_viewport_rect().size.x
+	speed = randf_range(0.5, 3)
 	direction = [-1, 1].pick_random()
-	speed = randf_range(1.25, 1.25)
 
 	spawn_initial_floaties()
 
@@ -23,19 +23,10 @@ func _ready():
 
 
 func spawn_initial_floaties():
-	var x_position = 0.0
+	var x_position := 0.0
 
 	while x_position < river_width:
-		var log = floaty.instantiate()
-
-		log.position.x = x_position
-		log.position.y = 41
-
-		log.dir = direction
-		log.speed = speed
-
-		add_child(log)
-
+		spawn_log(x_position)
 		x_position += randf_range(min_gap, max_gap)
 
 
@@ -45,19 +36,21 @@ func _on_spawn_timer_timeout():
 
 
 func set_spawn_time():
-	var base_gap = randf_range(min_gap, max_gap)
-	spawn_timer.wait_time = base_gap / (speed * 250.0)
+	var gap = randf_range(min_gap, max_gap)
+	spawn_timer.wait_time = gap / (speed * 100.0)
 
 
 func spawn_floaty():
-	var log = floaty.instantiate()
 	if direction == 1:
-		log.position.x = river_width -30
+		spawn_log(river_width + 50)
 	else:
-		log.position.x = -50
+		spawn_log(-50)
 
-	log.position.y = 41
 
+func spawn_log(x: float):
+	var log = floaty.instantiate()
+
+	log.position = Vector2(x, 41)
 	log.dir = direction
 	log.speed = speed
 
