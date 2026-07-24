@@ -32,7 +32,6 @@ func _ready():
 
 func _physics_process(delta):
 
-	# Follow the log
 	if on_log and log != null and !moving:
 		global_position.x = log.global_position.x
 
@@ -60,6 +59,8 @@ func _physics_process(delta):
 			var current_row = round((global_position.y - GRID_OFFSET.y) / TILE_SIZE)
 
 			if current_row < furthest_row:
+				if score==2: 
+					global.game_running=true
 				score += furthest_row - current_row
 				furthest_row = current_row
 				scoreboard.text=str(score)
@@ -67,7 +68,6 @@ func _physics_process(delta):
 		return
 
 
-	# Queue inputs
 	if Input.is_action_just_pressed("ui_left"):
 		if move_queue.size() < MAX_QUEUE_SIZE:
 			move_queue.append(Vector2.LEFT)
@@ -85,7 +85,6 @@ func _physics_process(delta):
 			move_queue.append(Vector2.DOWN)
 
 
-	# Wait until jump animation finishes
 	if !can_move:
 		return
 
@@ -138,14 +137,21 @@ func snap_to_grid(pos: Vector2) -> Vector2:
 
 
 func _on_river_collisions_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int):
+	
 	on_log = true
 	log = area
 
 	target_river_y = snap_to_grid(global_position).y - 20
 	aligning_to_log = true
 
+func turnCollisionOff():
+	$hitbox.monitorable=false
+	$floaty_collisions.monitoring=false
+	z_index=-1
 
 func _on_river_collisions_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int):
+	if global_position.x<-50 or global_position.x>1250:
+		get_parent().game_over(score)
 	if area == log:
 		on_log = false
 		log = null
@@ -154,4 +160,5 @@ func _on_river_collisions_area_shape_exited(area_rid: RID, area: Area2D, area_sh
 func _on_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int):
 	if !on_log:
 		sprites.play("drown1")
-		get_parent().game_over();
+		turnCollisionOff()
+		get_parent().game_over(score)

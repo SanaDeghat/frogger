@@ -14,7 +14,7 @@ var speed := 1.0
 
 func _ready():
 	direction = [-1, 1].pick_random()
-	speed = randf_range(0.25, 1.25)
+	speed = randf_range(1.25, 1.25)
 
 	spawn_initial_floaties()
 
@@ -51,11 +51,10 @@ func set_spawn_time():
 
 func spawn_floaty():
 	var log = floaty.instantiate()
-
 	if direction == 1:
-		log.position.x = river_width + 100
+		log.position.x = river_width -30
 	else:
-		log.position.x = -100
+		log.position.x = -50
 
 	log.position.y = 41
 

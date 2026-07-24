@@ -8,6 +8,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
 	position.x-=speed*dir
-	if position.x<-100 or position.x>1400:
+	if position.x<-50 or position.x>1250:
 		queue_free()

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://org0q75g5ira"]
+
+[ext_resource type="Script" uid="uid://dl7wsm40f7kc4" path="res://scripts/death_screen.gd" id="1_uyutr"]
+
+[node name="deathScreen" type="CanvasLayer" unique_id=2109532432]
+visible = false
+script = ExtResource("1_uyutr")
+
+[node name="restart" type="Button" parent="." unique_id=760036747]
+offset_left = 131.0
+offset_top = 190.0
+offset_right = 492.0
+offset_bottom = 268.0
+text = "RESTART "
+
+[node name="Label" type="Label" parent="." unique_id=711300744]
+offset_left = 131.0
+offset_top = 66.0
+offset_right = 498.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 70
+text = "YA LOST"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://cee6arq8vty2x" path="res://assets/sprites/pixelFont-7-8x14-sproutLands.ttf" id="9_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bvshg3mbn77fh" path="res://assets/sprites/Sprite sheet for Basic Pack copy 2.png" id="9_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ba1t1jji81mvl" path="res://assets/sprites/Sprite sheet for Basic Pack copy 4.png" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://org0q75g5ira" path="res://scenes/death_screen.tscn" id="13_trceg"]
 
 [node name="Node2D" type="Node2D" unique_id=2019117850]
 script = ExtResource("1_ya4ey")
@@ -22,10 +23,6 @@ tile_map_data = PackedByteArray("AAANAAQABAABAAEAAAANAAMABAACAAUAAAANAAIABAABAAE
 [node name="row-spawner" parent="." unique_id=770669474 instance=ExtResource("2_sugp2")]
 scale = Vector2(0.9999999, 0.9999999)
 
-[node name="CharacterBody2D" parent="." unique_id=2132057065 instance=ExtResource("1_o5qli")]
-position = Vector2(600, 9)
-scale = Vector2(5, 5)
-
 [node name="Camera2D" parent="." unique_id=546184211 instance=ExtResource("4_jyhfs")]
 position = Vector2(578, 21)
 
@@ -34,6 +31,10 @@ tile_map_data = PackedByteArray("AAAOAAQAAQAAAAQAAAAOAAMAAQAAAAQAAAAOAAIAAQAAAAQ
 
 [node name="coin" parent="." unique_id=560083590 instance=ExtResource("6_tefeu")]
 position = Vector2(588.00006, -44)
+scale = Vector2(5, 5)
+
+[node name="CharacterBody2D" parent="." unique_id=2132057065 instance=ExtResource("1_o5qli")]
+position = Vector2(600, 160)
 scale = Vector2(5, 5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2020323355]
@@ -96,3 +97,5 @@ theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
 theme_override_fonts/font = ExtResource("9_eb6dy")
 theme_override_font_sizes/font_size = 11
 text = "0"
+
+[node name="deathScreen" parent="." unique_id=2109532432 instance=ExtResource("13_trceg")]

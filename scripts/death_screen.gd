@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if global.game_running:
-		global.gold+=1
-		queue_free()
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
