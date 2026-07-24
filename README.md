@@ -43,6 +43,9 @@ sooo when its done i will add executbles but for now you can just play it [here]
 # Did you use AI? 
 A little, mainly bc GRID BASED MOVMENT TSPMOO OAGH GGHJC  
 
+# Lapses
+Designing Shop UI: https://lapse.hackclub.com/timelapse/xRYCFqwOEEf3
+
 # Where are the pictures? 
 I got you hehe
 <img width="1582" height="1035" alt="image" src="https://github.com/user-attachments/assets/d192cb54-53bd-4dd7-a14b-adf19806a3f0" />
