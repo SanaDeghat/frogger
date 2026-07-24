@@ -43,12 +43,17 @@ position = Vector2(1048.5925, 127.50001)
 scale = Vector2(3.653646, 3.653646)
 texture = ExtResource("7_o6xl0")
 
+[node name="SpriteSheetForBasicPackCopy4" type="Sprite2D" parent="CanvasLayer/SpriteSheetForBasicPackCopy2" unique_id=649940011]
+position = Vector2(-9.468, -0.5)
+scale = Vector2(0.568, 0.9997985)
+texture = ExtResource("10_eb6dy")
+
 [node name="Label" type="Label" parent="CanvasLayer/SpriteSheetForBasicPackCopy2" unique_id=286106541]
 texture_filter = 2
-offset_left = -3.9939733
-offset_top = -3.4212422
-offset_right = 16.533493
-offset_bottom = 13.82181
+offset_left = -13.299731
+offset_top = -2.6001441
+offset_right = 7.2277346
+offset_bottom = 14.642907
 theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
 theme_override_fonts/font = ExtResource("9_eb6dy")
 theme_override_font_sizes/font_size = 11
@@ -66,3 +71,28 @@ texture = ExtResource("9_ya4ey")
 [node name="SpriteSheetForBasicPackCopy4" type="Sprite2D" parent="CanvasLayer/SpriteSheetForBasicPackCopy3" unique_id=400018331]
 position = Vector2(-19, 0)
 texture = ExtResource("10_eb6dy")
+
+[node name="Label" type="Label" parent="CanvasLayer/SpriteSheetForBasicPackCopy3" unique_id=991199573]
+offset_left = -35.789165
+offset_top = -3.0051951
+offset_right = 8.74239
+offset_bottom = 19.994804
+theme_override_fonts/font = ExtResource("9_eb6dy")
+theme_override_font_sizes/font_size = 12
+text = "Score:"
+
+[node name="SpriteSheetForBasicPackCopy4" type="Sprite2D" parent="CanvasLayer" unique_id=1505382915]
+position = Vector2(1046.5, 207.4526)
+scale = Vector2(3.5405397, 3.6289492)
+texture = ExtResource("7_o6xl0")
+
+[node name="Label" type="Label" parent="CanvasLayer/SpriteSheetForBasicPackCopy4" unique_id=489638516]
+texture_filter = 2
+offset_left = -3.9939733
+offset_top = -3.4212422
+offset_right = 16.533493
+offset_bottom = 13.82181
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_fonts/font = ExtResource("9_eb6dy")
+theme_override_font_sizes/font_size = 11
+text = "0"

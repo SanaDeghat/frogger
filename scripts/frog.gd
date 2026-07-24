@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var score = 0
-
+var score := 0
+var furthest_row := 0
 const TILE_SIZE := 80
 const SPEED := 300.0
 const GRID_OFFSET := Vector2(40, 20)
+@onready var scoreboard: Label = $"../CanvasLayer/SpriteSheetForBasicPackCopy2/Label"
 
 const LOG_ALIGN_SPEED := 500.0
 const MAX_QUEUE_SIZE := 4
@@ -26,6 +27,7 @@ var log: Area2D = null
 func _ready():
 	global_position = snap_to_grid(global_position)
 	target_position = global_position
+	furthest_row = round((global_position.y - GRID_OFFSET.y) / TILE_SIZE)
 
 
 func _physics_process(delta):
@@ -48,7 +50,6 @@ func _physics_process(delta):
 			global_position.y = target_river_y
 
 
-	# Continue current movement
 	if moving:
 		global_position = global_position.move_toward(target_position, SPEED * delta)
 
@@ -56,6 +57,12 @@ func _physics_process(delta):
 			global_position = target_position
 			target_position = global_position
 			moving = false
+			var current_row = round((global_position.y - GRID_OFFSET.y) / TILE_SIZE)
+
+			if current_row < furthest_row:
+				score += furthest_row - current_row
+				furthest_row = current_row
+				scoreboard.text=str(score)
 
 		return
 
