@@ -1,4 +1,5 @@
 # frogger
+press arrow keys to move
 **THIS IS A WORK IN PRIGRESS ROUGHLY 1/3 DONE WITH NO POLISH YET**
 # What is this?
 Its MEANT to be a crossy road clone but with frogs not done obv yet but 
@@ -9,16 +10,18 @@ heres some features that it has already:
 4. floaty thing you need to jump over when crossing rivers (4 options for floaty thing)
 5. a drowning animation
 6. moving camera
-7. grid based movment
-8. coin system
-9. diffrent frog skins
+7. scores
+8. game doenst start immidietly  
+9. grid based movment
+10. coin system
+11. diffrent frog skins
+12. death screen
 
 Things i dont have yet (BUT I WILL ADD TRUST):
 1. roads 💀
-2. Death/game over (and the death screen and all that)
+2. Polished Death/game over (and the death screen and all that)
 3. music
 4. pause screen
-5. high score
 6. main menu
 7. shop (place to spend coins to get frog skins)
 8. ability to switch between skins
